@@ -10,12 +10,10 @@ The framework is designed to run UI tests.
 npm install
 ```
 
-## Running the tests:**
+## Running the tests:
 
 ```bash
 npm run test - Run all tests in headed mode
-npm run test:chrome - Run UI tests in Chromium
-npm run test:webkit - Run UI tests in Webkit
 npm run test:headless - Run all tests in headless mode
 
 ```
@@ -24,10 +22,12 @@ npm run test:headless - Run all tests in headless mode
 ```bash
 docker build -t origin-energy-tests . && docker run --rm origin-energy-tests
 ```
+## Default github actions workflow added for CI/CD
 
-## issues/Limitations as of today
+## Issues/Limitations as of today
 ```bash
-There is an issue with opening pdf URL rendering with Chromium headless
+There is an issue with opening pdf URL rendering with Chromium headless (playwrihght limitation)
+Also seeing issues with Firefox browser and are commented 
 ```
 
 
