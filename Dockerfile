@@ -16,5 +16,6 @@ COPY . .
 # Create downloads and test-results folder
 RUN mkdir -p downloads test-results
 
+
 # Run tests by default
 CMD ["sh", "-c", "npx playwright test --reporter=html && echo '✓ Tests passed. Reports saved to /app/test-results/'"]
