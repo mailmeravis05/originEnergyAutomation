@@ -3,7 +3,7 @@
 import { test } from '@playwright/test';
 import PricingPage from '../pages/PricingPage';
 import { PlanDetailsPage } from '../pages/PlanDetailsPage';
-import { validatePdfContainsGas } from '../lib/pdfHelper';
+import { assertPdfText } from '../lib/pdfHelper';
 import { testData } from '../data/test-data';
 
 
@@ -47,7 +47,8 @@ test.describe('Origin Energy - plans flow', () => {
     const filePath = await planDetailsPage.downloadPdfFromUrl();
 
     // Step 10: Validate PDF content
-    await validatePdfContainsGas(filePath);
+    await assertPdfText(filePath, 'gas');
+    
 
   });
 
