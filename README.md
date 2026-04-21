@@ -22,7 +22,8 @@ docker build -t origin-energy-tests . && docker run --rm origin-energy-tests
 ```
 
 **issues/Limitations as of today
+```bash
 There is an issue with opening pdf URL redering with Chromium headless
-
+```
 
 
