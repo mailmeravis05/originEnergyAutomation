@@ -22,7 +22,7 @@ export async function validatePdfContainsGas(filePath: string) {
   let bufferString = buffer.toString('latin1');
   
   // Search for common energy/gas related keywords
-  const keywords = ['gas', 'electricity'];
+  const keywords = ['gas'];
   const foundKeywords = keywords.filter(kw => bufferString.toLowerCase().includes(kw));
   
   if (foundKeywords.length === 0) {

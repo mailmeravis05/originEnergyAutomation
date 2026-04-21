@@ -1,4 +1,4 @@
-// tests/origin.spec.ts
+
 
 import { test } from '@playwright/test';
 import PricingPage from '../pages/PricingPage';
@@ -7,10 +7,9 @@ import { validatePdfContainsGas } from '../lib/pdfHelper';
 import { testData } from '../data/test-data';
 
 
+test.describe('Origin Energy - plans flow', () => {
 
-test.describe('Origin Energy - Pricing Flow', () => {
-
-  test('Validate Gas plan PDF from pricing page', async ({ page, context }) => {
+  test('Test should contain gas plan when only gas plans selected', async ({ page, context }) => {
 
     const pricingPage = new PricingPage(page);
 
@@ -49,7 +48,6 @@ test.describe('Origin Energy - Pricing Flow', () => {
 
     // Step 10: Validate PDF content
     await validatePdfContainsGas(filePath);
-  
 
   });
 
