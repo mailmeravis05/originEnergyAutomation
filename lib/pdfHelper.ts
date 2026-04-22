@@ -10,16 +10,11 @@ export async function extractPdfText(filePath: string) {
 
   // Extract text
   const result = await parser.getText();
+  //console.log('Extracted PDF Text:', result.text);
   return result.text;
 }
 
-export async function assertPdfText(filePath: string, expectedText: string) {
-  const text = (await extractPdfText(filePath)).toLowerCase();
 
-  if (text.includes(expectedText.toLowerCase())) {
-    console.log(`✓ PDF contains: ${expectedText}`);
-  } 
-}
 
 
 

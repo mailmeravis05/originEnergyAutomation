@@ -3,6 +3,7 @@
 import { Page, expect } from '@playwright/test';
 import * as path from 'path';
 import fs from 'fs';
+import { extractPdfText } from '../lib/pdfHelper';
 
 export class PlanDetailsPage {
   constructor(private page: Page) {}
@@ -10,6 +11,18 @@ export class PlanDetailsPage {
   async verifyPageOpened() {
     await expect(this.page).toHaveURL(/content|dam|pricing/i);
   }
+
+  async assertPdfTextFound(filePath: string, expectedText: string) {
+  const text = (await extractPdfText(filePath));
+  expect(text).toContain(expectedText);
+ 
+}
+
+async assertPdfTextNotFound(filePath: string, expectedText: string) {
+  const text = (await extractPdfText(filePath));
+  expect(text).not.toContain(expectedText);
+ 
+}
 
   async downloadPdfFromUrl(): Promise<string> {
 
