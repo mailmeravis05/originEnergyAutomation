@@ -7,6 +7,7 @@ The framework is designed to run UI tests.
 
 ```bash
 npm install
+npx playwright install --with-deps // browsers
 ```
 ## Running the tests
 
