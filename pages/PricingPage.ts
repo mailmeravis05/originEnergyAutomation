@@ -27,11 +27,10 @@ export default class PricingPage {
 
 
   async navigate() {
-    await this.page.goto('https://www.originenergy.com.au/pricing.html', {
+    await this.page.goto('/pricing.html', {
       waitUntil: 'networkidle',
     });
-    // Wait for address input to be ready
-    //await this.addressInput().waitFor({ state: 'attached', timeout: 150000 });
+   
   }
 
   async searchAddress(address: string, suggestionText: string) {
@@ -40,7 +39,6 @@ export default class PricingPage {
     
     // Fill address with a slight delay to allow autocomplete to trigger
     await input.fill(address);
-    await this.page.waitForTimeout(500);
 
     await expect(this.suggestionItem(suggestionText))
       .toBeVisible({ timeout: 10000 });

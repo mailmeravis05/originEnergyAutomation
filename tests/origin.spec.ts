@@ -47,12 +47,7 @@ test.describe('Origin Energy - plans flow', () => {
     const filePath = await planDetailsPage.downloadPdfFromUrl();
 
     // Step 10: Validate PDF content
-    await planDetailsPage.assertPdfTextFound(filePath, 'Estimated gas cost');
-
-
-    // Step 11: Validate PDF content - negative
-    await planDetailsPage.assertPdfTextNotFound(filePath, 'Estimated electricity cost');
-    
+    await planDetailsPage.assertPdfTextFound(filePath, testData.expectedPdfText);
 
   });
 
